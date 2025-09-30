@@ -21,6 +21,7 @@ export default function BuyButton({ product }) {
         formRef.current.amount.value = product.price;
         formRef.current.productinfo.value = product.name;
         formRef.current.hash.value = data.hash;
+        localStorage.setItem("currentTxnid", orderId);
         formRef.current.submit();
       } else {
         alert("Failed to generate payment link");
@@ -48,8 +49,8 @@ export default function BuyButton({ product }) {
         <input type="hidden" name="productinfo" />
         <input type="hidden" name="firstname" value="Demo" />
         <input type="hidden" name="email" value="demo@example.com" />
-        <input type="hidden" name="surl" value="https://order-and-pay-demo.vercel.app/payment-status-update" />
-        <input type="hidden" name="furl" value="https://order-and-pay-demo.vercel.app/payment-status-update" />
+        <input type="hidden" name="surl" value="https://order-and-pay-demo.vercel.app/success" />
+        <input type="hidden" name="furl" value="https://order-and-pay-demo.vercel.app/failure" />
         <input type="hidden" name="hash" />
       </form>
     </>

@@ -15,17 +15,5 @@ export async function POST(request) {
     .update({ status: status === "success" ? "paid" : "failed" })
     .eq("id", txnid);
 
-  return new Response(
-    `<html>
-      <head>
-        <meta http-equiv="refresh" content="0; url=${url}/${status === "success" ? "success" : "failure"}" />
-      </head>
-      <body>
-        <p>Redirecting...</p>
-      </body>
-    </html>`,
-    {
-      headers: { "Content-Type": "text/html" },
-    }
-  );
+  return new Response("OK", { status: 200 });
 }
