@@ -21,7 +21,7 @@ export default function BuyButton({ product }) {
         formRef.current.amount.value = product.price;
         formRef.current.productinfo.value = product.name;
         formRef.current.hash.value = data.hash;
-        localStorage.setItem("currentTxnid", orderId);
+        localStorage.setItem("currentTxnid", data.orderId);
         formRef.current.submit();
       } else {
         alert("Failed to generate payment link");
