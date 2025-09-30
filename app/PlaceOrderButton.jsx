@@ -36,8 +36,6 @@ export default function BuyButton({ product }) {
       <button onClick={handlePlaceOrder} className={styles.buyButton}>
         Place order
       </button>
-
-      {/* Hidden PayU Form */}
       <form
         ref={formRef}
         action="https://test.payu.in/_payment"
@@ -50,8 +48,8 @@ export default function BuyButton({ product }) {
         <input type="hidden" name="productinfo" />
         <input type="hidden" name="firstname" value="Demo" />
         <input type="hidden" name="email" value="demo@example.com" />
-        <input type="hidden" name="surl" value="http://localhost:3000/api/payment-status-update" />
-        <input type="hidden" name="furl" value="http://localhost:3000/api/payment-status-update" />
+        <input type="hidden" name="surl" value="https://order-and-pay-demo.vercel.app/payment-status-update" />
+        <input type="hidden" name="furl" value="https://order-and-pay-demo.vercel.app/payment-status-update" />
         <input type="hidden" name="hash" />
       </form>
     </>
