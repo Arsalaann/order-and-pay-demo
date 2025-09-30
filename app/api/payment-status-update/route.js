@@ -1,7 +1,7 @@
 import { supabaseAdmin } from "../../lib/supabaseAdmin";
 
 export async function POST(request) {
-  const url=process.env.NEXT_PUBLIC_BASE_URL||"http://localhost:3000";
+  const url = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
   const formData = await request.formData();
   const txnid = formData.get("txnid");
   const status = formData.get("status");
@@ -15,7 +15,17 @@ export async function POST(request) {
     .update({ status: status === "success" ? "paid" : "failed" })
     .eq("id", txnid);
 
-  return Response.redirect(
-    `${url}/${status === "success" ? "success" : "failure"}`
+  return new Response(
+    `<html>
+      <head>
+        <meta http-equiv="refresh" content="0; url=${url}/${status === "success" ? "success" : "failure"}" />
+      </head>
+      <body>
+        <p>Redirecting...</p>
+      </body>
+    </html>`,
+    {
+      headers: { "Content-Type": "text/html" },
+    }
   );
 }

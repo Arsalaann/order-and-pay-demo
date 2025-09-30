@@ -15,6 +15,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   width: 300px;
   padding: 15px;
+  padding-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,10 +83,18 @@
 }
 
 .failureMessage {
-  color: #242424; 
+  color:rgb(231, 53, 53); 
   font-size: 1.5rem;
   text-align: center;
 }
+
+.failureMessage {
+  color: rgb(33, 155, 33); 
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+
 
 .infoText {
   color: #374151; 
