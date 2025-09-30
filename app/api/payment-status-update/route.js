@@ -1,7 +1,7 @@
 import { supabaseAdmin } from "../../lib/supabaseAdmin";
 
 export async function POST(request) {
-  const url=process.env.NEXT_PUBLIC_BASE_URL||"http://localhost:3000";
+  const url="https://order-and-pay-demo.vercel.app";
   const formData = await request.formData();
   const txnid = formData.get("txnid");
   const status = formData.get("status");
